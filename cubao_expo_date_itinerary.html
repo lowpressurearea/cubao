@@ -1,0 +1,209 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.wrap{padding:1.5rem 0}
+.header{margin-bottom:1.5rem}
+.header h1{font-size:20px;font-weight:500;color:var(--color-text-primary)}
+.header p{font-size:13px;color:var(--color-text-secondary);margin-top:4px}
+.section-label{font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-tertiary);margin:1.5rem 0 .5rem}
+.timeline{display:grid;gap:8px}
+.row{display:grid;grid-template-columns:56px 22px 1fr;gap:0 10px;align-items:stretch}
+.time-col{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-start;padding-top:10px}
+.time-label{font-size:11px;font-weight:500;color:var(--color-text-secondary);white-space:nowrap;line-height:1.4}
+.dur-label{font-size:10px;color:var(--color-text-tertiary);white-space:nowrap;line-height:1.4}
+.spine-col{display:flex;flex-direction:column;align-items:center}
+.dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;margin-top:9px;border:2px solid transparent}
+.line{width:2px;flex:1;margin-top:2px}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:.65rem 1rem;margin-bottom:2px}
+.card-top{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.badge{font-size:10px;font-weight:500;padding:2px 8px;border-radius:var(--border-radius-md);white-space:nowrap}
+.card h3{font-size:13px;font-weight:500;color:var(--color-text-primary);line-height:1.3}
+.card p{font-size:12px;color:var(--color-text-secondary);line-height:1.5;margin-top:3px}
+.smart-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.smart-pill{font-size:10px;padding:2px 7px;border-radius:var(--border-radius-md);border:0.5px solid}
+.meta{display:flex;gap:12px;margin-top:5px;flex-wrap:wrap}
+.meta span{font-size:11px;color:var(--color-text-tertiary);display:flex;align-items:center;gap:4px}
+.tag-transport{background:#E6F1FB;color:#0C447C;border-color:#B5D4F4}
+.tag-food{background:#FAECE7;color:#712B13;border-color:#F0997B}
+.tag-coffee{background:#FAEEDA;color:#633806;border-color:#FAC775}
+.tag-leisure{background:#E1F5EE;color:#085041;border-color:#5DCAA5}
+.dot-transport{background:#185FA5;border-color:#B5D4F4}
+.dot-food{background:#D85A30;border-color:#F5C4B3}
+.dot-coffee{background:#BA7517;border-color:#FAC775}
+.dot-leisure{background:#1D9E75;border-color:#9FE1CB}
+.line-transport{background:#B5D4F4}
+.line-food{background:#F5C4B3}
+.line-coffee{background:#FAC775}
+.line-leisure{background:#9FE1CB}
+.ploc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:.5rem}
+.ploc-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:.75rem}
+.ploc-card .ploc-letter{font-size:18px;font-weight:500;color:var(--color-text-primary);line-height:1}
+.ploc-card .ploc-word{font-size:11px;font-weight:500;color:var(--color-text-secondary);margin-top:1px}
+.ploc-card .ploc-desc{font-size:11px;color:var(--color-text-tertiary);margin-top:6px;line-height:1.5}
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin-top:.5rem}
+.sum-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:.75rem;text-align:center}
+.sum-card .num{font-size:20px;font-weight:500;color:var(--color-text-primary)}
+.sum-card .lbl{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
+</style>
+
+<div class="wrap">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Cubao Expo date itinerary with PLOC and SMART framework timeline</h2>
+
+  <div class="header">
+    <h1>Cubao Expo date itinerary</h1>
+    <p>UST → Cubao Expo · Time offsets from T+0 (partner finishes requirements)</p>
+  </div>
+
+  <div class="summary-grid">
+    <div class="sum-card"><div class="num">5</div><div class="lbl">Stops</div></div>
+    <div class="sum-card"><div class="num">~4h</div><div class="lbl">Total duration</div></div>
+    <div class="sum-card"><div class="num">T+0</div><div class="lbl">Start anchor</div></div>
+    <div class="sum-card"><div class="num">3</div><div class="lbl">Venues</div></div>
+  </div>
+
+  <div class="section-label">Timeline</div>
+  <div class="timeline">
+
+    <div class="row">
+      <div class="time-col"><span class="time-label">T+0</span><span class="dur-label">15 min</span></div>
+      <div class="spine-col"><div class="dot dot-transport"></div><div class="line line-transport"></div></div>
+      <div class="card">
+        <div class="card-top"><span class="badge tag-transport">Transit</span></div>
+        <h3>Meet-up &amp; Grab booking at UST</h3>
+        <p>Partner finishes requirements · Meet at UST main gate · Open Grab app &amp; book while walking to pick-up point.</p>
+        <div class="meta">
+          <span><i class="ti ti-map-pin" aria-hidden="true"></i>UST, España Blvd, Manila</span>
+          <span><i class="ti ti-clock" aria-hidden="true"></i>15 min buffer</span>
+        </div>
+        <div class="smart-row">
+          <span class="smart-pill tag-transport">S: Meet at UST main gate</span>
+          <span class="smart-pill tag-transport">M: ≤15 min wait</span>
+          <span class="smart-pill tag-transport">A: Grab available daytime</span>
+          <span class="smart-pill tag-transport">R: Start of date</span>
+          <span class="smart-pill tag-transport">T: T+0 to T+15</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="time-col"><span class="time-label">T+15</span><span class="dur-label">30–40 min</span></div>
+      <div class="spine-col"><div class="dot dot-transport"></div><div class="line line-transport"></div></div>
+      <div class="card">
+        <div class="card-top"><span class="badge tag-transport">Transit</span></div>
+        <h3>Grab ride: UST → Cubao Expo</h3>
+        <p>~10 km via Quezon Ave / EDSA. Estimated 30–40 min depending on traffic. Use travel time to check Habanero's menu online.</p>
+        <div class="meta">
+          <span><i class="ti ti-car" aria-hidden="true"></i>~10 km</span>
+          <span><i class="ti ti-clock" aria-hidden="true"></i>30–40 min</span>
+        </div>
+        <div class="smart-row">
+          <span class="smart-pill tag-transport">S: Grab car service</span>
+          <span class="smart-pill tag-transport">M: Arrive Gen. Romulo Ave</span>
+          <span class="smart-pill tag-transport">A: Daytime traffic manageable</span>
+          <span class="smart-pill tag-transport">R: Reach lunch venue on time</span>
+          <span class="smart-pill tag-transport">T: T+15 to T+55</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="time-col"><span class="time-label">T+55</span><span class="dur-label">60–75 min</span></div>
+      <div class="spine-col"><div class="dot dot-food"></div><div class="line line-food"></div></div>
+      <div class="card">
+        <div class="card-top"><span class="badge tag-food">Lunch</span></div>
+        <h3>Habanero Kitchen — lunch</h3>
+        <p>Arrive at Cubao Expo and head straight to Habanero. Note: they open at 11 AM (closed Mondays). Popular spot — expect possible queuing on weekends. Allow 60–75 min for ordering, food, and settling the bill.</p>
+        <div class="meta">
+          <span><i class="ti ti-clock" aria-hidden="true"></i>60–75 min</span>
+          <span><i class="ti ti-star" aria-hidden="true"></i>4.5 ★ · ₱₱</span>
+          <span><i class="ti ti-alert-triangle" aria-hidden="true"></i>Closed Mondays</span>
+        </div>
+        <div class="smart-row">
+          <span class="smart-pill tag-food">S: Habanero Kitchen, Cubao Expo</span>
+          <span class="smart-pill tag-food">M: Full meal ordered &amp; eaten</span>
+          <span class="smart-pill tag-food">A: Opens 11 AM, seats available</span>
+          <span class="smart-pill tag-food">R: Fuel up for the afternoon</span>
+          <span class="smart-pill tag-food">T: T+55 to T+130</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="time-col"><span class="time-label">T+130</span><span class="dur-label">45–60 min</span></div>
+      <div class="spine-col"><div class="dot dot-coffee"></div><div class="line line-coffee"></div></div>
+      <div class="card">
+        <div class="card-top"><span class="badge tag-coffee">Coffee &amp; Dessert</span></div>
+        <h3>The Brewman Coffee — coffee &amp; dessert</h3>
+        <p>Walk over to Brewman (steps away inside the loop). Try seasonal drinks or their matcha latte. Two floors — 2F is great for lingering. Enjoy pastries and wind down after lunch.</p>
+        <div class="meta">
+          <span><i class="ti ti-clock" aria-hidden="true"></i>45–60 min</span>
+          <span><i class="ti ti-star" aria-hidden="true"></i>4.5 ★</span>
+          <span><i class="ti ti-walk" aria-hidden="true"></i>Short walk inside loop</span>
+        </div>
+        <div class="smart-row">
+          <span class="smart-pill tag-coffee">S: Brewman Coffee, Cubao Expo</span>
+          <span class="smart-pill tag-coffee">M: Drinks + dessert ordered</span>
+          <span class="smart-pill tag-coffee">A: Opens 10 AM</span>
+          <span class="smart-pill tag-coffee">R: Chill &amp; transition to bar</span>
+          <span class="smart-pill tag-coffee">T: T+130 to T+190</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="time-col"><span class="time-label">T+190</span><span class="dur-label">90+ min</span></div>
+      <div class="spine-col"><div class="dot dot-leisure"></div><div class="line" style="background:transparent"></div></div>
+      <div class="card">
+        <div class="card-top"><span class="badge tag-leisure">Leisure</span></div>
+        <h3>INT.Bar / EXT.Cafe — chill &amp; stay</h3>
+        <p>Head to INT.Bar/EXT.Cafe to wrap up the date. Speakeasy-style dual-concept space — café below, bar above. Order cocktails (try the Breaking Bad) or just drinks. Open until midnight. Stay as long as you like — this is the open-ended wind-down block.</p>
+        <div class="meta">
+          <span><i class="ti ti-clock" aria-hidden="true"></i>90 min+</span>
+          <span><i class="ti ti-star" aria-hidden="true"></i>4.0 ★</span>
+          <span><i class="ti ti-moon" aria-hidden="true"></i>Open until 12 AM</span>
+        </div>
+        <div class="smart-row">
+          <span class="smart-pill tag-leisure">S: INT.Bar / EXT.Cafe</span>
+          <span class="smart-pill tag-leisure">M: Arrive &amp; settle in</span>
+          <span class="smart-pill tag-leisure">A: Open until midnight</span>
+          <span class="smart-pill tag-leisure">R: Quality time, date wind-down</span>
+          <span class="smart-pill tag-leisure">T: T+190 onward</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label">PLOC management framework</div>
+  <div class="ploc-grid">
+    <div class="ploc-card">
+      <div class="ploc-letter">P</div>
+      <div class="ploc-word">Planning</div>
+      <div class="ploc-desc">Route mapped UST → Cubao Expo. Venues verified (hours, ratings, walk order). Grab booked in advance. Buffer time allocated for queues.</div>
+    </div>
+    <div class="ploc-card">
+      <div class="ploc-letter">L</div>
+      <div class="ploc-word">Leading</div>
+      <div class="ploc-desc">You take the lead on booking Grab, deciding queue priority at Habanero, and guiding the walking order inside the loop.</div>
+    </div>
+    <div class="ploc-card">
+      <div class="ploc-letter">O</div>
+      <div class="ploc-word">Organizing</div>
+      <div class="ploc-desc">Stops sequenced logically: transit → lunch → coffee → leisure. Each venue is within walking distance inside Cubao Expo after arrival.</div>
+    </div>
+    <div class="ploc-card">
+      <div class="ploc-letter">C</div>
+      <div class="ploc-word">Controlling</div>
+      <div class="ploc-desc">Time blocks defined per stop. Adjust pace at Habanero if queues are long by trimming Brewman time. INT.Bar is open-ended as a flex buffer.</div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:1.5rem">Quick tips</div>
+  <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:.85rem 1rem;font-size:12px;color:var(--color-text-secondary);line-height:1.7">
+    <span style="color:var(--color-text-primary);font-weight:500">Avoid Mondays</span> — Habanero is closed. Best days: Tue–Sun. ·
+    <span style="color:var(--color-text-primary);font-weight:500">Weekends</span> — Habanero queues can run 30+ min; consider arriving by 11:30 AM to beat the lunch rush. ·
+    <span style="color:var(--color-text-primary);font-weight:500">Parking</span> — if coming by car, Cubao Expo has limited parking; Grab drop-off at Gen. Romulo Ave is easiest. ·
+    <span style="color:var(--color-text-primary);font-weight:500">INT.Bar stairs</span> — steep to 2F; heads up.
+  </div>
+</div>
